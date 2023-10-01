@@ -1,0 +1,67 @@
+likelihood_weighting: False
+T: 100
+eps: 1e-5
+num_scales: 50
+# scale_model_sigma: True
+# snr: 0.2
+
+
+sde_atom_types:
+  type: 'vesde'
+  sigma_min: 0.005
+  sigma_max: 0.5
+  # num_scales: 50
+  continuous: True
+  # snr: 0.15
+
+
+sde_frac_coords:
+  type: 'vesde'
+  sigma_min: 0.0025
+  sigma_max: 0.25
+  # num_scales: 50
+  continuous: True
+  # snr: 0.2
+
+
+sde_lattice:
+  type: 'vesde'
+  sigma_min: 0.005
+  sigma_max: 0.5
+  # num_scales: 50
+  continuous: True
+  # snr: 0.2
+
+
+
+
+# sde_atom_types:
+#   type: 'vpsde'
+#   # beta_min: 0.001
+#   # beta_max: 0.1
+#   beta_min: 0.1
+#   beta_max: 1.
+#   # num_scales: 50
+#   continuous: True
+#   # snr: 0.15
+
+# # sde_frac_coords:
+# #   type: 'vpsde'
+# #   # beta_min: 0.001
+# #   # beta_max: 0.1
+# #   beta_min: 0.1
+# #   beta_max: 1.
+# #   # num_scales: 50
+# #   continuous: True
+# #   # snr: 0.2
+
+
+# sde_lattice:
+#   type: 'vpsde'
+#   # beta_min: 0.001
+#   # beta_max: 0.1
+#   beta_min: 0.1
+#   beta_max: 1.
+#   # num_scales: 50
+#   continuous: True
+#   # snr: 0.2

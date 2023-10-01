@@ -1,0 +1,26 @@
+
+expname: perov
+groupname: pc_attenton_unified
+
+core:
+  tags:
+  - ${now:%Y-%m-%d}
+  version: 0.0.1
+defaults:
+- data: perov
+- logging: default
+- model: model
+- optim: default
+- train: default
+
+hydra:
+  job:
+    env_set:
+      WANDB_DIR: ${oc.env:WABDB_DIR}
+      WANDB_START_METHOD: thread
+  run:
+    dir: ${oc.env:HYDRA_JOBS}/singlerun/sde_attention/w_fixed/${expname}/
+    
+  sweep:
+    dir: ${oc.env:HYDRA_JOBS}/multirun/sde_attention/w_fixed/${expname}/
+    subdir: ${hydra.job.num}_${hydra.job.id}

@@ -1,0 +1,4 @@
+embedding_dim: 64
+hidden_dim: 16
+latent_dim: 2
+location: ${oc.env:PROJECT_ROOT}/data/atom_type_ae_penalty_64162.pt

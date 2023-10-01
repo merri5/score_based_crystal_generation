@@ -1,0 +1,31 @@
+
+_target_: model.pl_modules.attention_unified.AttentionSinCos_Separate_jointMLP
+skip_coords_network: false
+
+w_in: True
+
+norm: true
+# norm_complex: true
+residual_complex: false
+residual_complex_after: false
+
+num_attention_heads_complex: 8
+
+embedding_num_atoms: false
+
+useSwiGLU: false
+
+separate_embedding_atoms_lattice: True
+separate_embedding_atoms_dim: 64
+separate_embedding_lattice_dim: 64
+
+hidden_dim_final_mlp_joint: 448
+hidden_dim_final_mlp_lattice: 256
+
+num_heads: 4
+attention_layers: 8
+
+lattice_MLP: true
+
+atom_type_dim: ${model.atom_type_ae.latent_dim}
+output_atom_type_dim: ${model.atom_type_ae.latent_dim}

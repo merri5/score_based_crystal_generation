@@ -1,0 +1,18 @@
+frequency: 5
+lr_scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  factor: 0.6
+  min_lr: 1e-7
+  patience: 30
+optimizer:
+  _target_: torch.optim.Adam
+  betas:
+  - 0.9
+  - 0.999
+  eps: 1e-08
+  lr: 1e-5
+  weight_decay: 0 #1e-3
+special_lr:
+  lr_atom_type_latent: 1e-3
+  lr_complex: 1e-5
+use_lr_scheduler: true

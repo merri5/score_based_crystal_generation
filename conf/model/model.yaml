@@ -1,0 +1,68 @@
+_target_: model.pl_modules.model.Architecture
+max_atoms: ${data.max_atoms}
+num_atoms_prior: ${data.num_atoms_prior}
+
+use_sde: True
+
+#####
+##### If not using SDE
+#####
+num_noise_level: 50
+sigma_atom_type_begin: 1
+sigma_atom_type_end: 0.001
+sigma_coords_begin: 0.5
+sigma_coords_end: 0.0005
+sigma_lattice_begin: 1.
+sigma_lattice_end: 0.001
+
+
+#####
+##### Atom types
+#####
+use_vae: False
+train_vae: false
+train_vae_gt: False
+
+use_ae: False
+use_ae_penalty: True
+
+epoch_stop_ae_finetuning: 1000
+
+train_ae: True
+# train_ae_penalty: True
+train_ae_gt: False
+use_grid: False
+
+#####
+##### Coords
+#####
+
+
+periodic_coords: False
+periodic_coords_modified: False
+
+scale_cord_loss_sigma: True
+
+periodic_loss_square: False
+
+
+sigma_lattice_from_data: False
+
+
+
+
+cost_coord: 2.
+cost_atom_type: 1.
+cost_atom_types_cross_entropy: 1.
+cost_atom_types_kld: 1.
+cost_atom_types_ae_penalty: 5.
+cost_lattice: 1. 
+teacher_forcing_max_epoch: ${data.teacher_forcing_max_epoch}
+
+
+
+defaults:
+  - atom_type_vae: atom_type_vae
+  - atom_type_ae: atom_type_ae
+  - sde: sde
+  - decoder: attention_unified 
